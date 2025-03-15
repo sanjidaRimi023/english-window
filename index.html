@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/8a99a91be9.js"
       crossorigin="anonymous"></script>
     <!-- google font -->
-     <!-- hind-siliguri  -->
+    <!-- hind-siliguri  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,37 +27,94 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet" />
-      <!-- font awesome -->
-      <script src="https://kit.fontawesome.com/8a99a91be9.js" crossorigin="anonymous"></script>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/8a99a91be9.js"
+      crossorigin="anonymous"></script>
     <style>
       .hind-siliguri {
         font-family: "Hind Siliguri", sans-serif;
-        font-weight: 300;
         font-style: normal;
       }
       .poppins{
         font-family: "Poppins", sans-serif;
-        font-weight: 100;
         font-style: normal;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        border: 1px solid rgb(198, 189, 189);
+        backdrop-filter: blur(40px);
+        background: linear-gradient(
+            178.08deg,
+            rgba(255, 255, 255, 0.3) -28.101%,
+            rgba(0, 0, 0, 0) 128.101%
+          ),
+          linear-gradient(
+            169.25deg,
+            rgba(255, 255, 255, 0.05) 24.246%,
+            rgba(0, 0, 0, 0) 24.246%
+          );
       }
     </style>
   </head>
-  <body>
-    <header>
-      <nav class="container mx-auto">
+  <body class="mb-20">
+    <header class="poppins">
+      <nav class="container mx-auto flex justify-between">
         <div class="flex py-5 items-center">
           <h1 class="text-xl font-semibold">English</h1>
-          <img src="assets/logo.png" alt="">
-          <h1 class="text-xl font-semibold">জানালা</h1>
+          <img src="assets/logo.png" alt="" />
+          <h1 class="text-xl font-semibold hind-siliguri">জানালা</h1>
         </div>
-        <div>
-          <button class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i>FAQ</button>
-          <button class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Learn</button>
-          <button class="btn btn-outline btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i>Logout</button>
+        <div class="flex gap-2 py-5">
+          <button class="btn btn-outline btn-primary">
+            <a href=""><i class="fa-solid fa-circle-question"></i> FAQ</a>
+          </button>
+          <button class="btn btn-outline btn-primary">
+            <a href=""><i class="fa-solid fa-book-open"></i> Learn</a>
+          </button>
+          <button class="btn btn-outline btn-primary">
+            <a href=""
+              ><i class="fa-solid fa-arrow-right-to-bracket"></i> Logout</a
+            >
+          </button>
         </div>
       </nav>
     </header>
-    <main></main>
+    <main class="container mx-auto poppins">
+      <section class="flex items-center">
+        <div>
+          <h1 class="text-5xl py-4 font-semibold"><span class="text-[#00BCFF]">English</span> is Easy</h1>
+          <p class="hind-siliguri text-2xl">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+            <div class="flex flex-col gap-5 py-5">
+            <input type="email" class="input" placeholder="Enter your name" />
+            <input type="password" class="input" placeholder="Password (must be 123456)" />
+            <button id="get-btn" class="btn btn-primary w-[120px]">Get Started</button>
+            </div>
+        </div>
+        <div>
+          <img src="assets/hero-student.png" alt="">
+        </div>
+      </section>
+      <section id="lesson-container" class="flex flex-col items-center">
+        <div class="">
+          <h1 class="text-4xl font-medium"><span class="text-[#00BCFF]">Let's </span> Learn Vocabularies</h1>
+        </div>
+        <div>
+          <button class="btn btn-outline btn-primary">
+            <i class="fa-solid fa-book-open"></i> Learn
+          </button>
+        </div>
+          
+        
+      </section>
+    </main>
+
+
     <footer></footer>
+
+
+
+    <script src="scripts/index.js"></script>
   </body>
 </html>
