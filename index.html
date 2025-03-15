@@ -36,7 +36,7 @@
         font-family: "Hind Siliguri", sans-serif;
         font-style: normal;
       }
-      .poppins{
+      .poppins {
         font-family: "Poppins", sans-serif;
         font-style: normal;
       }
@@ -55,6 +55,9 @@
             rgba(255, 255, 255, 0.05) 24.246%,
             rgba(0, 0, 0, 0) 24.246%
           );
+      }
+      footer {
+        border-top: 3px solid rgb(255, 235, 235);
       }
     </style>
   </head>
@@ -84,30 +87,159 @@
     <main class="container mx-auto poppins">
       <section id="banner" class="flex items-center">
         <div>
-          <h1 class="text-5xl py-4 font-semibold"><span class="text-[#00BCFF]">English</span> is Easy</h1>
-          <p class="hind-siliguri text-2xl">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
-            <div class="flex flex-col gap-5 py-5">
-            <input id="name" type="name" class="input" placeholder="Enter your name" />
-            <input id="password" type="password" class="input" placeholder="Password (must be 123456)" />
-            <button onclick="handleLogin()" class="btn btn-primary w-[120px]">Get Started</button>
-            </div>
+          <h1 class="text-5xl py-4 font-semibold">
+            <span class="text-[#00BCFF]">English</span> is Easy
+          </h1>
+          <p class="hind-siliguri text-2xl">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+            <br />
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+            অন্য একটি Level এ
+          </p>
+          <div class="flex flex-col gap-5 py-5">
+            <input
+              id="name"
+              type="name"
+              class="input"
+              placeholder="Enter your name" />
+            <input
+              id="password"
+              value="123456"
+              type="password"
+              class="input"
+              placeholder="Password (must be 123456)" />
+            <button onclick="handleLogin()" class="btn btn-primary w-[120px]">
+              Get Started
+            </button>
+          </div>
         </div>
         <div>
-          <img src="assets/hero-student.png" alt="">
+          <img src="assets/hero-student.png" alt="" />
         </div>
       </section>
       <section id="lessonContainer" class="flex flex-col items-center">
-          <h1 class="text-4xl font-medium"><span class="text-[#00BCFF]">Let's </span> Learn Vocabularies</h1>
-          <div id="btn-lesson">
-          </div>  
+        <h1 class="text-4xl font-semibold my-5">
+          <span class="text-[#00BCFF]">Let's </span> Learn Vocabularies
+        </h1>
+        <div id="btn-lesson"></div>
+      </section>
+      <section class="container mx-auto">
+        <div
+          class="bg-[#F8F8F8] rounded-md mt-5 flex flex-col items-center p-10">
+          <h1 class="hind-siliguri text-[#79716B] py-2">
+            আপনি এখনো কোন Lesson Select করেন নি
+          </h1>
+          <h1 class="text-[#292524] text-3xl font-medium">
+            একটি Lesson Select করুন।
+          </h1>
+        </div>
+      </section>
+
+      <section class="my-30">
+        <div class="flex justify-center">
+          <h1 class="text-[#18181B] text-4xl font-semibold">
+            <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+          </h1>
+        </div>
+        <div class="my-5">
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title font-semibold">
+              the difference between var, let, and const
+            </div>
+            <div class="collapse-content text-sm">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title font-semibold">
+              the difference between map(), forEach(), and filter()
+            </div>
+            <div class="collapse-content text-sm">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title font-semibold">
+              explain arrow functions and how they are different from regular
+              functions
+            </div>
+            <div class="collapse-content text-sm">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title font-semibold">
+              how JavaScript Promises work
+            </div>
+            <div class="collapse-content text-sm">
+              Click on "Forgot Password" on the login page and follow the
+              instructions sent to your email.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title font-semibold">
+              how closures work in JavaScript
+            </div>
+            <div class="collapse-content text-sm">
+              Go to "My Account" settings and select "Edit Profile" to make
+              changes.
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
-
-    <footer></footer>
-
-
-
+    <footer class="poppins">
+      <section class="container mx-auto flex justify-between items-center my-6">
+        <div>
+          <div class="flex items-center">
+            <h1 class="text-xl font-semibold">English</h1>
+            <img src="assets/logo.png" alt="logo" />
+            <h1 class="text-xl font-sm hind-siliguri">জানালা</h1>
+          </div>
+          <h1 class="hind-siliguri text-xl font-medium">ইংরেজি শিখুন সহজে</h1>
+          <h1>Providing ED-Tech Applications since 2025</h1>
+        </div>
+        <div class="">
+          <h2 class="text-[#18181B] text-sm font-semibold">Follow us</h2>
+          <ul class="flex gap-2 items-center">
+            <li>
+              <a href=""
+                ><img src="assets/fb-thumb.png" alt="facebook link"
+              /></a>
+            </li>
+            <li>
+              <a href="">
+                <img src="assets/instagram-thumb.png" alt="youtube link"
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="assets/instagram-thumb.png" alt="instagram link"
+              /></a>
+            </li>
+            <li>
+              <a href=""
+                ><img src="assets/github-thumb.png" alt="github link"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </footer>
     <script src="scripts/index.js"></script>
   </body>
 </html>

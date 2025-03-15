@@ -28,9 +28,9 @@ async function loadLesson() {
         console.error("Invalid data format");
         return;
     }
-    btnLessonContainer.innerHTML = data.map(btn => `
+    btnLessonContainer.innerHTML = data.map(button => `
         <button class="btn btn-outline btn-primary">
-            <i class="fa-solid fa-book-open"></i> Learn-${btn.level_no}
+            <i class="fa-solid fa-book-open"></i> Learn- ${button.level_no}
         </button>
     `).join('');
 }
