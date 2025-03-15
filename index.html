@@ -59,7 +59,7 @@
     </style>
   </head>
   <body class="mb-20">
-    <header class="poppins">
+    <header id="navber" class="poppins hidden">
       <nav class="container mx-auto flex justify-between">
         <div class="flex py-5 items-center">
           <h1 class="text-xl font-semibold">English</h1>
@@ -82,31 +82,24 @@
       </nav>
     </header>
     <main class="container mx-auto poppins">
-      <section class="flex items-center">
+      <section id="banner" class="flex items-center">
         <div>
           <h1 class="text-5xl py-4 font-semibold"><span class="text-[#00BCFF]">English</span> is Easy</h1>
           <p class="hind-siliguri text-2xl">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
             <div class="flex flex-col gap-5 py-5">
-            <input type="email" class="input" placeholder="Enter your name" />
-            <input type="password" class="input" placeholder="Password (must be 123456)" />
-            <button id="get-btn" class="btn btn-primary w-[120px]">Get Started</button>
+            <input id="name" type="name" class="input" placeholder="Enter your name" />
+            <input id="password" type="password" class="input" placeholder="Password (must be 123456)" />
+            <button onclick="handleLogin()" class="btn btn-primary w-[120px]">Get Started</button>
             </div>
         </div>
         <div>
           <img src="assets/hero-student.png" alt="">
         </div>
       </section>
-      <section id="lesson-container" class="flex flex-col items-center">
-        <div class="">
+      <section id="lessonContainer" class="flex flex-col items-center">
           <h1 class="text-4xl font-medium"><span class="text-[#00BCFF]">Let's </span> Learn Vocabularies</h1>
-        </div>
-        <div>
-          <button class="btn btn-outline btn-primary">
-            <i class="fa-solid fa-book-open"></i> Learn
-          </button>
-        </div>
-          
-        
+          <div id="btn-lesson">
+          </div>  
       </section>
     </main>
 
