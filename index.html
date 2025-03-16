@@ -59,11 +59,15 @@
       footer {
         border-top: 3px solid rgb(255, 235, 235);
       }
+      html {
+        scroll-behavior: smooth;
+        
+      }
     </style>
   </head>
   <body class="mb-20">
     <header id="navber" class="poppins hidden">
-      <nav class="container mx-auto flex justify-between">
+      <nav class="container mx-auto flex justify-between z-50">
         <div class="flex py-5 items-center">
           <h1 class="text-xl font-semibold">English</h1>
           <img src="assets/logo.png" alt="" />
@@ -71,10 +75,10 @@
         </div>
         <div class="flex gap-2 py-5">
           <button class="btn btn-outline btn-primary">
-            <a href=""><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            <a href="#Frequently"><i class="fa-solid fa-circle-question"></i> FAQ</a>
           </button>
           <button class="btn btn-outline btn-primary">
-            <a href=""><i class="fa-solid fa-book-open"></i> Learn</a>
+            <a href="#lessonContainer"><i class="fa-solid fa-book-open"></i> Learn</a>
           </button>
           <button class="btn btn-outline btn-primary">
             <a href=""
@@ -117,7 +121,7 @@
           <img src="assets/hero-student.png" alt="" />
         </div>
       </section>
-      <section id="lessonContainer" class="flex flex-col items-center">
+      <section id="lessonContainer" class="flex flex-col items-center scroll-my-40 my-20">
         <h1 class="text-4xl font-semibold my-5">
           <span class="text-[#00BCFF]">Let's </span> Learn Vocabularies
         </h1>
@@ -125,7 +129,7 @@
       </section>
       <section class="container mx-auto">
         <div
-          class="bg-[#F8F8F8] rounded-md mt-5 flex flex-col items-center p-10">
+          class="bg-[#F8F8F8] rounded-md mt-5 flex flex-col items-center p-20">
           <h1 class="hind-siliguri text-[#79716B] py-2">
             আপনি এখনো কোন Lesson Select করেন নি
           </h1>
@@ -135,7 +139,7 @@
         </div>
       </section>
 
-      <section class="my-30">
+      <section id="Frequently" class="scroll-my-30 my-40">
         <div class="flex justify-center">
           <h1 class="text-[#18181B] text-4xl font-semibold">
             <span class="text-[#00BCFF]">Frequently</span> Asked Questions
@@ -217,22 +221,22 @@
           <h2 class="text-[#18181B] text-sm font-semibold">Follow us</h2>
           <ul class="flex gap-2 items-center">
             <li>
-              <a href=""
+              <a href="https://www.facebook.com/profile.php?id=61554696036982"
                 ><img src="assets/fb-thumb.png" alt="facebook link"
               /></a>
             </li>
             <li>
-              <a href="">
-                <img src="assets/instagram-thumb.png" alt="youtube link"
+              <a href="https://www.youtube.com/">
+                <img src="assets/youtube-thumb.png" alt="youtube link"
               /></a>
             </li>
             <li>
-              <a href=""
+              <a href="https://www.instagram.com/"
                 ><img src="assets/instagram-thumb.png" alt="instagram link"
               /></a>
             </li>
             <li>
-              <a href=""
+              <a href="https://github.com/sanjidaRimi023"
                 ><img src="assets/github-thumb.png" alt="github link"
               /></a>
             </li>
