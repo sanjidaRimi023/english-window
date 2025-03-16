@@ -9,11 +9,11 @@ const banner = getById("banner");
 const navber = getById("navber");
 function handleLogin() {
     if (!inputName.value.length) {
-     return alert("input name is not correct");
+     return alert("Please enter your name");
 
     }
     if (!inputPassword.value.length || inputPassword.value !== "123456") {
-       return alert("password wrong")
+       return alert("Enter correct password")
     }
     banner.classList.add('hidden')
     navber.classList.remove('hidden')
@@ -35,4 +35,7 @@ async function loadLesson() {
     `).join('');
 }
 
+
+
 loadLesson()
+loadLessonContainer()

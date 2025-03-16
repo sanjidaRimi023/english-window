@@ -111,7 +111,7 @@
               value="123456"
               type="password"
               class="input"
-              placeholder="Password (must be 123456)" />
+              placeholder="Enter Password (password 123456)" />
             <button onclick="handleLogin()" class="btn btn-primary w-[120px]">
               Get Started
             </button>
@@ -130,10 +130,10 @@
       <section class="container mx-auto">
         <div
           class="bg-[#F8F8F8] rounded-md mt-5 flex flex-col items-center p-20">
-          <h1 class="hind-siliguri text-[#79716B] py-2">
+          <h1 class="hind-siliguri text-[#79716B] py-2 font-semibold">
             আপনি এখনো কোন Lesson Select করেন নি
           </h1>
-          <h1 class="text-[#292524] text-3xl font-medium">
+          <h1 class="text-[#292524] text-3xl font-semibold">
             একটি Lesson Select করুন।
           </h1>
         </div>
@@ -149,59 +149,67 @@
           <div
             class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-semibold">
-              the difference between var, let, and const
+            <div class="collapse-title text-xl font-bold">
+              what is the difference between var, let, and const?
             </div>
-            <div class="collapse-content text-sm">
-              Click the "Sign Up" button in the top right corner and follow the
-              registration process.
-            </div>
-          </div>
-          <div
-            class="collapse collapse-plus bg-base-100 border border-base-300">
-            <input type="radio" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-semibold">
-              the difference between map(), forEach(), and filter()
-            </div>
-            <div class="collapse-content text-sm">
-              Click the "Sign Up" button in the top right corner and follow the
-              registration process.
+            <div class="collapse-content">
+              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>The difference between var, let and const is-
+              </h3>
+              <li>var => Var declares variable with function or global scope and allows re-declaration and update eithin the same scpoe</li>
+              <li>let => it's declares variable with block scope, allowing updates but not re-declaration with in same block.</li>
+              <li>const => it's declares block-scoped variables that can't be change or reassigned after their initial assignment</li>
             </div>
           </div>
           <div
             class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-semibold">
-              explain arrow functions and how they are different from regular
-              functions
+            <div class="collapse-title text-xl font-bold">
+             What is the difference between map(), forEach(), and filter()?
             </div>
-            <div class="collapse-content text-sm">
-              Click the "Sign Up" button in the top right corner and follow the
-              registration process.
+            <div class="collapse-content">
+              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>The difference between map(), forEach() and filter() is-
+              </h3>
+              <li>map()=> Map create a new array from calling a function for every array element. it's dosen't execute the function for empty elements.</li>
+              <br>
+              <li>forEach()=> The main purpose of forEach method is it executes a provided function once for each array element. In other words, iterates over the array. Often used in functional programming. Always returns undefined.</li>
+              <br>
+              <li>filter()=>The filter() method creates a new array filled with all the elements of the old array that pass a certain test, provided as a function.It can be thought as of a loop, that is specifically for filtering in/out certain values from an array.</li>
             </div>
           </div>
           <div
             class="collapse collapse-plus bg-base-100 border border-base-300">
-            <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title font-semibold">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-bold">
+              explain arrow functions and how they are different from regular functions.
+            </div>
+            <div class="collapse-content">
+              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>JavaScript arrow functions provide a concise and more readable syntax for creating anonymous functions. They offer several benefits over traditional function expressions, including an implicit "this" binding, implicit return, and a more concise syntax. By using arrow functions, we can write cleaner and more efficient code, making our JavaScript code easier to read and maintain.But we can't use "arguments" and "new" keyword in array function like normal function.
+              </h3>
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-bold">
               how JavaScript Promises work
             </div>
-            <div class="collapse-content text-sm">
-              Click on "Forgot Password" on the login page and follow the
-              instructions sent to your email.
+            <div class="collapse-content">
+              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>Promises are a fundamental part of modern JavaScript and are widely used in APIs like fetch, timers, and other asynchronous operations.They have three states: pending, fulfilled, and rejected.
+              </h3>       
             </div>
           </div>
           <div
             class="collapse collapse-plus bg-base-100 border border-base-300">
-            <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title font-semibold">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-bold">
               how closures work in JavaScript
             </div>
-            <div class="collapse-content text-sm">
-              Go to "My Account" settings and select "Edit Profile" to make
-              changes.
+            <div class="collapse-content">
+              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>A closure is a function that retains access to its lexical scope, even after the outer function has finished executing.It's created whenever a function is defined inside another function.
+              </h3>
+              
             </div>
-          </div>
+          </div> 
         </div>
       </section>
     </main>
