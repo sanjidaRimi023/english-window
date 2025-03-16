@@ -31,6 +31,7 @@
     <script
       src="https://kit.fontawesome.com/8a99a91be9.js"
       crossorigin="anonymous"></script>
+      
     <style>
       .hind-siliguri {
         font-family: "Hind Siliguri", sans-serif;
@@ -42,6 +43,7 @@
       }
       header {
         position: sticky;
+        z-index: 500;
         top: 0;
         border: 1px solid rgb(198, 189, 189);
         backdrop-filter: blur(40px);
@@ -62,6 +64,9 @@
       html {
         scroll-behavior: smooth;
         
+      }
+      .index{
+        z-index: -1 !important;
       }
     </style>
   </head>
@@ -88,58 +93,52 @@
         </div>
       </nav>
     </header>
-    <main class="container mx-auto poppins">
-      <section id="banner" class="flex items-center">
-        <div>
-          <h1 class="text-5xl py-4 font-semibold">
-            <span class="text-[#00BCFF]">English</span> is Easy
-          </h1>
-          <p class="hind-siliguri text-2xl">
-            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
-            <br />
-            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
-            অন্য একটি Level এ
-          </p>
-          <div class="flex flex-col gap-5 py-5">
-            <input
-              id="name"
-              type="name"
-              class="input"
-              placeholder="Enter your name" />
-            <input
-              id="password"
-              value="123456"
-              type="password"
-              class="input"
-              placeholder="Enter Password (password 123456)" />
-            <button onclick="handleLogin()" class="btn btn-primary w-[120px]">
-              Get Started
-            </button>
-          </div>
+    <section id="banner" class="flex items-center container mx-auto">
+      <div>
+        <h1 class="text-5xl py-4 font-semibold">
+          <span class="text-[#00BCFF]">English</span> is Easy
+        </h1>
+        <p class="hind-siliguri text-2xl">
+          আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+          <br />
+          আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+          অন্য একটি Level এ
+        </p>
+        <div class="flex flex-col gap-5 py-5">
+          <input
+            id="name"
+            type="name"
+            class="input"
+            placeholder="Enter your name" />
+          <input
+            id="password"
+            value="123456"
+            type="password"
+            class="input"
+            placeholder="Enter Password (password 123456)" />
+          <button onclick="handleLogin()" class="btn btn-primary w-[120px]">
+            Get Started
+          </button>
         </div>
-        <div>
-          <img src="assets/hero-student.png" alt="" />
-        </div>
-      </section>
+      </div>
+      <div>
+        <img src="assets/hero-student.png" alt="" />
+      </div>
+    </section> 
+    <main id="main" class="container mx-auto poppins hidden">
+      
       <section id="lessonContainer" class="flex flex-col items-center scroll-my-40 my-20">
         <h1 class="text-4xl font-semibold my-5">
           <span class="text-[#00BCFF]">Let's </span> Learn Vocabularies
         </h1>
-        <div id="btn-lesson"></div>
-      </section>
-      <section class="container mx-auto">
-        <div
-          class="bg-[#F8F8F8] rounded-md mt-5 flex flex-col items-center p-20">
-          <h1 class="hind-siliguri text-[#79716B] py-2 font-semibold">
-            আপনি এখনো কোন Lesson Select করেন নি
-          </h1>
-          <h1 class="text-[#292524] text-3xl font-semibold">
-            একটি Lesson Select করুন।
-          </h1>
+        <div id="btn-lesson">
         </div>
+        <div id="Card-container" class="m-5 p-4 grid grid-cols-3 gap-5 bg-[#F8F8F8] w-full">
+          
+          </div>
       </section>
-
-      <section id="Frequently" class="scroll-my-30 my-40">
+      
+      <section id="Frequently" class="scroll-my-30 my-40 index">
         <div class="flex justify-center">
           <h1 class="text-[#18181B] text-4xl font-semibold">
             <span class="text-[#00BCFF]">Frequently</span> Asked Questions
@@ -252,6 +251,9 @@
         </div>
       </section>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>
