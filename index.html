@@ -31,7 +31,7 @@
     <script
       src="https://kit.fontawesome.com/8a99a91be9.js"
       crossorigin="anonymous"></script>
-      
+
     <style>
       .hind-siliguri {
         font-family: "Hind Siliguri", sans-serif;
@@ -63,14 +63,13 @@
       }
       html {
         scroll-behavior: smooth;
-        
       }
-      .index{
+      .index {
         z-index: -1 !important;
       }
     </style>
   </head>
-  <body class="mb-20">
+  <body id="body" class="mb-20">
     <header id="navber" class="poppins hidden">
       <nav class="container mx-auto flex justify-between z-50">
         <div class="flex py-5 items-center">
@@ -80,10 +79,14 @@
         </div>
         <div class="flex gap-2 py-5">
           <button class="btn btn-outline btn-primary">
-            <a href="#Frequently"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            <a href="#Frequently"
+              ><i class="fa-solid fa-circle-question"></i> FAQ</a
+            >
           </button>
           <button class="btn btn-outline btn-primary">
-            <a href="#lessonContainer"><i class="fa-solid fa-book-open"></i> Learn</a>
+            <a href="#lessonContainer"
+              ><i class="fa-solid fa-book-open"></i> Learn</a
+            >
           </button>
           <button class="btn btn-outline btn-primary">
             <a href=""
@@ -124,20 +127,23 @@
       <div>
         <img src="assets/hero-student.png" alt="" />
       </div>
-    </section> 
+    </section>
     <main id="main" class="container mx-auto poppins hidden">
-      
-      <section id="lessonContainer" class="flex flex-col items-center scroll-my-40 my-20">
+      <section
+        id="lessonContainer"
+        class="flex flex-col items-center scroll-my-40 my-20">
         <h1 class="text-4xl font-semibold my-5">
           <span class="text-[#00BCFF]">Let's </span> Learn Vocabularies
         </h1>
         <div id="btn-lesson">
-        </div>
-        <div id="Card-container" class="m-5 p-4 grid grid-cols-3 gap-5 bg-[#F8F8F8] w-full">
           
-          </div>
+        </div>
+        <div
+          id="Card-container" class="m-5 p-4 grid grid-cols-3 gap-5 bg-[#F8F8F8] w-full">
+
+        </div>
       </section>
-      
+
       <section id="Frequently" class="scroll-my-30 my-40 index">
         <div class="flex justify-center">
           <h1 class="text-[#18181B] text-4xl font-semibold">
@@ -152,37 +158,74 @@
               what is the difference between var, let, and const?
             </div>
             <div class="collapse-content">
-              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>The difference between var, let and const is-
+              <h3 class="text-lg font-medium">
+                <span class="text-[#00BCFF] font-semibold">Answer : </span>The
+                difference between var, let and const is-
               </h3>
-              <li>var => Var declares variable with function or global scope and allows re-declaration and update eithin the same scpoe</li>
-              <li>let => it's declares variable with block scope, allowing updates but not re-declaration with in same block.</li>
-              <li>const => it's declares block-scoped variables that can't be change or reassigned after their initial assignment</li>
+              <li>
+                var => Var declares variable with function or global scope and
+                allows re-declaration and update eithin the same scpoe
+              </li>
+              <li>
+                let => it's declares variable with block scope, allowing updates
+                but not re-declaration with in same block.
+              </li>
+              <li>
+                const => it's declares block-scoped variables that can't be
+                change or reassigned after their initial assignment
+              </li>
             </div>
           </div>
           <div
             class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-2" checked="checked" />
             <div class="collapse-title text-xl font-bold">
-             What is the difference between map(), forEach(), and filter()?
+              What is the difference between map(), forEach(), and filter()?
             </div>
             <div class="collapse-content">
-              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>The difference between map(), forEach() and filter() is-
+              <h3 class="text-lg font-medium">
+                <span class="text-[#00BCFF] font-semibold">Answer : </span>The
+                difference between map(), forEach() and filter() is-
               </h3>
-              <li>map()=> Map create a new array from calling a function for every array element. it's dosen't execute the function for empty elements.</li>
-              <br>
-              <li>forEach()=> The main purpose of forEach method is it executes a provided function once for each array element. In other words, iterates over the array. Often used in functional programming. Always returns undefined.</li>
-              <br>
-              <li>filter()=>The filter() method creates a new array filled with all the elements of the old array that pass a certain test, provided as a function.It can be thought as of a loop, that is specifically for filtering in/out certain values from an array.</li>
+              <li>
+                map()=> Map create a new array from calling a function for every
+                array element. it's dosen't execute the function for empty
+                elements.
+              </li>
+              <br />
+              <li>
+                forEach()=> The main purpose of forEach method is it executes a
+                provided function once for each array element. In other words,
+                iterates over the array. Often used in functional programming.
+                Always returns undefined.
+              </li>
+              <br />
+              <li>
+                filter()=>The filter() method creates a new array filled with
+                all the elements of the old array that pass a certain test,
+                provided as a function.It can be thought as of a loop, that is
+                specifically for filtering in/out certain values from an array.
+              </li>
             </div>
           </div>
           <div
             class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-2" checked="checked" />
             <div class="collapse-title text-xl font-bold">
-              explain arrow functions and how they are different from regular functions.
+              explain arrow functions and how they are different from regular
+              functions.
             </div>
             <div class="collapse-content">
-              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>JavaScript arrow functions provide a concise and more readable syntax for creating anonymous functions. They offer several benefits over traditional function expressions, including an implicit "this" binding, implicit return, and a more concise syntax. By using arrow functions, we can write cleaner and more efficient code, making our JavaScript code easier to read and maintain.But we can't use "arguments" and "new" keyword in array function like normal function.
+              <h3 class="text-lg font-medium">
+                <span class="text-[#00BCFF] font-semibold">Answer : </span
+                >JavaScript arrow functions provide a concise and more readable
+                syntax for creating anonymous functions. They offer several
+                benefits over traditional function expressions, including an
+                implicit "this" binding, implicit return, and a more concise
+                syntax. By using arrow functions, we can write cleaner and more
+                efficient code, making our JavaScript code easier to read and
+                maintain.But we can't use "arguments" and "new" keyword in array
+                function like normal function.
               </h3>
             </div>
           </div>
@@ -193,8 +236,13 @@
               how JavaScript Promises work
             </div>
             <div class="collapse-content">
-              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>Promises are a fundamental part of modern JavaScript and are widely used in APIs like fetch, timers, and other asynchronous operations.They have three states: pending, fulfilled, and rejected.
-              </h3>       
+              <h3 class="text-lg font-medium">
+                <span class="text-[#00BCFF] font-semibold">Answer : </span
+                >Promises are a fundamental part of modern JavaScript and are
+                widely used in APIs like fetch, timers, and other asynchronous
+                operations.They have three states: pending, fulfilled, and
+                rejected.
+              </h3>
             </div>
           </div>
           <div
@@ -204,11 +252,14 @@
               how closures work in JavaScript
             </div>
             <div class="collapse-content">
-              <h3 class="text-lg font-medium"><span class="text-[#00BCFF] font-semibold">Answer : </span>A closure is a function that retains access to its lexical scope, even after the outer function has finished executing.It's created whenever a function is defined inside another function.
+              <h3 class="text-lg font-medium">
+                <span class="text-[#00BCFF] font-semibold">Answer : </span>A
+                closure is a function that retains access to its lexical scope,
+                even after the outer function has finished executing.It's
+                created whenever a function is defined inside another function.
               </h3>
-              
             </div>
-          </div> 
+          </div>
         </div>
       </section>
     </main>
@@ -251,7 +302,11 @@
         </div>
       </section>
     </footer>
-
+    <dialog id="my_modal_1" class="modal">
+      <div id="modal-content" class="modal-box">
+        
+      </div>
+    </dialog>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts/index.js"></script>
