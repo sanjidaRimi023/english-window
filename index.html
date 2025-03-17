@@ -138,9 +138,17 @@
         <div id="btn-lesson">
           
         </div>
+        <div id="loader" class="text-center py-10 hidden">
+          <span class="loading loading-spinner text-info"></span>
+          <span class="loading loading-spinner text-primary"></span>
+          <span class="loading loading-spinner text-info"></span>
+          <span class="loading loading-spinner text-primary"></span>
+          <span class="loading loading-spinner text-info"></span>
+          <span class="loading loading-spinner text-primary"></span>
+
+        </div>
         <div
           id="Card-container" class="m-5 p-4 grid grid-cols-3 gap-5 bg-[#F8F8F8] w-full">
-
         </div>
       </section>
 
@@ -303,10 +311,9 @@
       </section>
     </footer>
     <dialog id="my_modal_1" class="modal">
-      <div id="modal-content" class="modal-box">
-        
-      </div>
-    </dialog>
+      <div id="modal-content" class="modal-box"></div>
+      <button id="closeModal" class="btn">Close</button>
+  </dialog>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts/index.js"></script>

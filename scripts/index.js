@@ -10,8 +10,16 @@ const inputName = getById('name');
 const inputPassword = getById('password');
 const banner = getById("banner");
 const navber = getById("navber");
-const modalContent = getById('modal-content')
+const modalContent = getById('modal-content');
 
+const showloader = () => {
+    document.getElementById("loader").classList.remove("hidden");
+    cardContainer.classList.add("hidden")
+}
+const hideloader = () => {
+    document.getElementById("loader").classList.add("hidden");
+    cardContainer.classList.remove("hidden")
+}
 function handleLogin() {
     if (!inputName.value.length) {
         return alert("Please enter your name");
@@ -35,7 +43,7 @@ async function loadLesson() {
         const { data } = await result.json();
         if (!data || !Array.isArray(data)) return;
         btnLessonContainer.innerHTML = data.map(button => `
-            <button onclick="lessonCard(${button.level_no})" class="btn btn-outline btn-primary">
+            <button id="btn-${button.id}" onclick="lessonCard(${button.level_no})" class="btn btn-outline btn-primary">
                 <i class="fa-solid fa-book-open"></i> Learn- ${button.level_no}
             </button>
         `).join('');
@@ -44,11 +52,17 @@ async function loadLesson() {
     }
 }
 
+
 function lessonCard(id) {
+    showloader();
     if (!id) return;
     fetch(`https://openapi.programming-hero.com/api/level/${id}`)
         .then(response => response.json())
-        .then((data) => displayLesson(data.data, id))
+        .then((data) => {
+            const clickbtn = document.getElementById(`btn-${id}`)
+            console.log(clickbtn);
+            displayLesson(data.data, id)
+        })
         .catch(error => console.error("Error loading lesson:", error));
 }
 
@@ -65,13 +79,13 @@ const displayLesson = (cards, id) => {
     }
     
     cardContainer.innerHTML = "";
-    
     if (cards.length > 0) {
         cardContainer.classList.add("grid", "grid-cols-3", "gap-5");
         cards.forEach(card => {
             const cardLesson = document.createElement("div");
             cardLesson.innerHTML = `
-                <div class="bg-base-100 rounded-lg p-6 shadow-sm">
+            <div class="bg-base-100 rounded-lg p-6 shadow-sm ">
+                <div class="rounded-md p-5 hover:bg-blue-100">
                     <div class="text-center space-y-6 p-6">
                         <h2 class="text-3xl font-bold">${card.word}</h2>
                         <p class="text-lg">Meaning / Pronunciation</p>
@@ -85,9 +99,14 @@ const displayLesson = (cards, id) => {
                             <i class="fa-solid fa-volume-high bg-[#1a91ff1a] p-3 rounded-md"></i>
                         </button>
                     </div>
-                </div>`;
+                </div>
+
+            </div>
+            
+            `;
             cardContainer.append(cardLesson);
         });
+        hideloader()
     } else {
         cardContainer.classList.remove("grid", "grid-cols-3", "gap-5");
         cardContainer.innerHTML = `
@@ -97,31 +116,61 @@ const displayLesson = (cards, id) => {
                 <h1 class="text-2xl font-semibold mt-2">পরবর্তী Lesson-এ যান।</h1>
             </div>`;
     }
+    hideloader()
 }
 
 const myModal = async (id) => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/word/${id}`)
-    const { data } = await res.json()
-    if (!my_modal_1) {
-        console.error("Modal element not found");
-        return;
-    }
-    modalContent.innerHTML = `
-   <h3 id="modal-title" class="text-lg font-bold">${data?.word} ${data.pronunciation}</h3>
-          <p id="modal-content" class="py-4"></p>
+    console.log(id);
+    try {
+        const res = await fetch(`https://openapi.programming-hero.com/api/word/${id}`);
+        console.log(res);
+        if (!res.ok) {
+            throw new Error("Failed to fetch data");
+        }
+        const { data } = await res.json();
 
-          <div class="modal-action">
-          <form method="dialog">
-            <button class="btn">Close</button>
-          </form>
-        </div>
-          
-    `
-    my_modal_1.showModal();
+        const { word, pronunciation, meaning, sentence, synonyms } = data;
+
+        if (!my_modal_1) {
+            console.error("Modal element not found");
+            return;
+        }
+        const modalContent = document.createElement('div');
+        modalContent.innerHTML = `
+            <div class="modal-box w-full hover:bg-slate-50">
+                <h3 class="text-2xl font-bold text-left">${word} 
+                    (<i class="fa-solid fa-microphone-lines"></i>: ${pronunciation})</h3>
+                <h3 class="text-xm font-bold text-left pt-4">Meaning <br> 
+                    <span class="font-light">${meaning ? meaning : "অর্থ পাওয়া যায়নি"}</span></h3>
+                <h3 class="text-xm font-bold text-left pt-4">Example <br> 
+                    <span class="font-light">${sentence ? sentence : "বাক্য পাওয়া যায়নি"}</span></h3>
+                <h3 class="text-xm font-bold text-left pt-4">সমার্থক শব্দ গুলো <br> 
+                    <span class="font-light">${synonyms ? synonyms : "সমার্থক শব্দ পাওয়া যায়নি"}</span></h3>
+                <div class="modal-action flex justify-start">
+                    <form method="dialog">
+                        <button class="btn w-full text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-white">
+                            Complete Learning
+                        </button>
+                    </form>
+                </div>
+            </div>
+        `;
+        my_modal_1.innerHTML = '';
+        my_modal_1.append(modalContent);
+
+        if (my_modal_1 instanceof HTMLDialogElement) {
+            my_modal_1.showModal();
+        } else {
+            console.error("my_modal_1 is not a valid modal element");
+        }
+    } catch (error) {
+        console.error("Error fetching word data:", error);
+    }
 };
+
 function pronounceWord(word) {
     const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = 'en-EN'; // English
+    utterance.lang = 'en-EN';
     window.speechSynthesis.speak(utterance);
   }
 displayLesson([]);
