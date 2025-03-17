@@ -36,35 +36,40 @@ function handleLogin() {
         draggable: true
     });
 }
-
 async function loadLesson() {
     try {
         const result = await fetch("https://openapi.programming-hero.com/api/levels/all");
         const { data } = await result.json();
         if (!data || !Array.isArray(data)) return;
+
         btnLessonContainer.innerHTML = data.map(button => `
-            <button id="btn-${button.id}" onclick="lessonCard(${button.level_no})" class="btn btn-outline btn-primary">
+            <button id="btn-${button.id}" 
+                class="btn btn-outline btn-primary lesson-btn" 
+                onclick="lessonCard(${button.level_no}, this)">
                 <i class="fa-solid fa-book-open"></i> Learn- ${button.level_no}
             </button>
         `).join('');
+
     } catch (error) {
         console.error("Failed to fetch lessons:", error);
     }
 }
 
-
-function lessonCard(id) {
+function lessonCard(id, clickedButton) {
     showloader();
     if (!id) return;
+    document.querySelectorAll(".lesson-btn").forEach(btn => btn.classList.remove("active"));
+
+    clickedButton.classList.add("active");
+
     fetch(`https://openapi.programming-hero.com/api/level/${id}`)
         .then(response => response.json())
         .then((data) => {
-            const clickbtn = document.getElementById(`btn-${id}`)
-            console.log(clickbtn);
-            displayLesson(data.data, id)
+            displayLesson(data.data, id);
         })
         .catch(error => console.error("Error loading lesson:", error));
 }
+
 
 const displayLesson = (cards, id) => {
     if (!id) {
@@ -77,7 +82,7 @@ const displayLesson = (cards, id) => {
             </div>
           </section>`;
     }
-    
+
     cardContainer.innerHTML = "";
     if (cards.length > 0) {
         cardContainer.classList.add("grid", "grid-cols-3", "gap-5");
@@ -172,6 +177,6 @@ function pronounceWord(word) {
     const utterance = new SpeechSynthesisUtterance(word);
     utterance.lang = 'en-EN';
     window.speechSynthesis.speak(utterance);
-  }
+}
 displayLesson([]);
 loadLesson();
