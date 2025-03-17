@@ -72,6 +72,7 @@ function lessonCard(id, clickedButton) {
 
 
 const displayLesson = (cards, id) => {
+    console.log(id);
     if (!id) {
         cardContainer.classList.remove("grid", "grid-cols-3", "gap-5");
         return cardContainer.innerHTML = `
@@ -97,7 +98,7 @@ const displayLesson = (cards, id) => {
                         <h1 class="text-lg font-medium text-[#18181B]">${card.meaning}</h1>
                     </div>
                     <div class="flex justify-between">
-                        <button onclick="myModal(${card.level})">
+                        <button onclick="myModal(${card.id})">
                             <i class="fa-solid fa-circle-info bg-[#1a91ff1a] p-3 rounded-md"></i>
                         </button>
                         <button onclick="pronounceWord('${card.word}')">
@@ -133,6 +134,7 @@ const myModal = async (id) => {
             throw new Error("Failed to fetch data");
         }
         const { data } = await res.json();
+        console.log(data);
 
         const { word, pronunciation, meaning, sentence, synonyms } = data;
 
